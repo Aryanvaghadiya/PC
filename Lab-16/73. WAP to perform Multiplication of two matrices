@@ -1,0 +1,73 @@
+#include<stdio.h>
+void main()
+{
+    int a[100][100],b[100][100],mul[100][100],i,j,r,c,r1,c1,k;
+    printf("Enter Row of 1st:");
+    scanf("%d",&r);
+    printf("Enter Column of 1st:");
+    scanf("%d",&c);
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("Enter Elements: ");
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("Enter Row of 2nd:");
+    scanf("%d",&r1);
+    printf("Enter Column of 2nd:");
+    scanf("%d",&c1);
+    for(i=0;i<r1;i++)
+    {
+        for(j=0;j<c1;j++)
+        {
+            printf("Enter Elements: ");
+            scanf("%d",&b[i][j]);
+        }
+    }
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n\n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",b[i][j]);
+        }
+        printf("\n");
+    }
+    if(c != r1)
+    {
+        printf("NO MULTIPLY.");
+    }
+    else
+    {
+        for(i=0;i<r;i++)
+        {
+            for(j=0;j<c;j++)
+            {
+                mul[i][j]=0;
+                for(k=0;k<c;k++)
+                {
+                    mul[i][j]=a[i][k]*b[k][j];
+                }
+            }
+        }
+    }
+    printf("Multiplied Matrix:\n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c1;j++)
+        {
+            printf("%d ",mul[i][j]);
+        }
+        printf("\n");
+    }
+}
